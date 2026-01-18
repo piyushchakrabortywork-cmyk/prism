@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn how PRISM AI reviews your GitHub pull requests - from PR creation to intelligent code review in seconds.">
+    <title>How It Works — PRISM</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========================================================================
+       NAVBAR (Exact copy from index.html)
+       ======================================================================== -->
+    <nav class="navbar">
+        <div class="navbar__container">
+
+            <!-- Left: Logo -->
+            <a href="index.html" class="navbar__logo">PRISM</a>
+
+            <!-- Center: Navigation Links -->
+            <ul class="navbar__nav">
+                <li>
+                    <a href="index.html#features" class="navbar__link">
+                        Features
+                        <span class="navbar__link-arrow">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="how-it-works.html" class="navbar__link navbar__link--active">
+                        How it Works
+                        <span class="navbar__link-arrow">↓</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#docs" class="navbar__link">Docs</a>
+                </li>
+                <li>
+                    <a href="pricing.html" class="navbar__link">Pricing</a>
+                </li>
+            </ul>
+
+            <!-- Right: Actions -->
+            <div class="navbar__actions">
+                <a href="https://github.com" class="navbar__github" target="_blank" rel="noopener">
+                    <svg class="navbar__github-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>2.4k</span>
+                </a>
+
+                <a href="index.html#install" class="navbar__cta">Install PRISM</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar__mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__nav">
+            <a href="index.html#features" class="mobile-menu__link">
+                Features
+                <span class="mobile-menu__link-arrow">↗</span>
+            </a>
+            <a href="how-it-works.html" class="mobile-menu__link mobile-menu__link--active">
+                How it Works
+                <span class="mobile-menu__link-arrow">↓</span>
+            </a>
+            <a href="index.html#docs" class="mobile-menu__link">Docs</a>
+            <a href="pricing.html" class="mobile-menu__link">Pricing</a>
+        </nav>
+        <a href="index.html#install" class="mobile-menu__cta">Install PRISM</a>
+    </div>
+
+    <!-- ========================================================================
+       HERO SECTION — "How It Works"
+       ======================================================================== -->
+    <section class="hiw-hero">
+        <div class="hiw-hero__content">
+
+            <!-- Badge -->
+            <div class="hero__badge">
+                <span class="hero__badge-dot"></span>
+                <span class="hero__badge-text">How GitHub PR Intelligence Works</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="hiw-hero__headline">
+                <span class="hiw-hero__headline-line">From Pull Request to</span>
+                <span class="hiw-hero__headline-line"><span class="hiw-hero__headline-emphasis">Intelligent Code
+                        Review</span> —</span>
+                <span class="hiw-hero__headline-line">Automatically</span>
+            </h1>
+
+            <!-- Subtext -->
+            <p class="hero__subheadline">
+                Our AI reviews every pull request with context, best practices, and deep code understanding — before
+                humans even look.
+            </p>
+
+            <!-- Animated Flow Diagram -->
+            <div class="hiw-hero__flow">
+                <div class="hiw-hero__flow-step" data-step="1">
+                    <div class="hiw-hero__flow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
+                    </div>
+                    <span class="hiw-hero__flow-label">GitHub PR</span>
+                </div>
+
+                <div class="hiw-hero__flow-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="hiw-hero__flow-step" data-step="2">
+                    <div class="hiw-hero__flow-icon hiw-hero__flow-icon--ai">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4Z" />
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </div>
+                    <span class="hiw-hero__flow-label">AI Engine</span>
+                </div>
+
+                <div class="hiw-hero__flow-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="hiw-hero__flow-step" data-step="3">
+                    <div class="hiw-hero__flow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            <path d="M8 10h8" />
+                            <path d="M8 14h4" />
+                        </svg>
+                    </div>
+                    <span class="hiw-hero__flow-label">Inline Comments</span>
+                </div>
+
+                <div class="hiw-hero__flow-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+
+                <div class="hiw-hero__flow-step" data-step="4">
+                    <div class="hiw-hero__flow-icon hiw-hero__flow-icon--success">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22,4 12,14.01 9,11.01" />
+                        </svg>
+                    </div>
+                    <span class="hiw-hero__flow-label">Merge</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       CORE SECTION — Step-by-Step Flow (5 Steps)
+       ======================================================================== -->
+    <section class="section hiw-steps" id="steps">
+        <div class="container">
+            <h2 class="hiw-steps__title animate-on-scroll">The Complete Workflow</h2>
+
+            <div class="hiw-timeline">
+                <!-- Step 1: Connect GitHub -->
+                <div class="hiw-timeline__step animate-on-scroll" data-delay="1">
+                    <div class="hiw-timeline__connector"></div>
+                    <div class="hiw-timeline__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
+                    </div>
+                    <div class="hiw-timeline__content">
+                        <span class="hiw-timeline__number">01</span>
+                        <h3>Connect Your GitHub Repository</h3>
+                        <p>OAuth-based secure GitHub integration. Select your repositories and branches — no code
+                            changes required.</p>
+                        <div class="hiw-timeline__pulse"></div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Open PR -->
+                <div class="hiw-timeline__step animate-on-scroll" data-delay="2">
+                    <div class="hiw-timeline__connector"></div>
+                    <div class="hiw-timeline__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="18" r="3" />
+                            <circle cx="6" cy="6" r="3" />
+                            <path d="M6 21V9a9 9 0 0 0 9 9" />
+                        </svg>
+                    </div>
+                    <div class="hiw-timeline__content">
+                        <span class="hiw-timeline__number">02</span>
+                        <h3>Create a Pull Request as Usual</h3>
+                        <p>No workflow changes needed. Developers keep working normally — PRISM triggers automatically.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3: AI Analyzes -->
+                <div class="hiw-timeline__step hiw-timeline__step--highlight animate-on-scroll" data-delay="3">
+                    <div class="hiw-timeline__connector"></div>
+                    <div class="hiw-timeline__icon hiw-timeline__icon--ai">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83" />
+                        </svg>
+                    </div>
+                    <div class="hiw-timeline__content">
+                        <span class="hiw-timeline__number">03</span>
+                        <h3>AI Reviews Your Code Intelligently</h3>
+                        <ul class="hiw-timeline__list">
+                            <li>Understands full code context</li>
+                            <li>Detects bugs & anti-patterns</li>
+                            <li>Suggests optimizations</li>
+                            <li>Enforces team standards</li>
+                        </ul>
+                    </div>
+                    <div class="hiw-timeline__glow"></div>
+                </div>
+
+                <!-- Step 4: Inline Feedback -->
+                <div class="hiw-timeline__step animate-on-scroll" data-delay="4">
+                    <div class="hiw-timeline__connector"></div>
+                    <div class="hiw-timeline__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            <path d="M8 10h8" />
+                            <path d="M8 14h4" />
+                        </svg>
+                    </div>
+                    <div class="hiw-timeline__content">
+                        <span class="hiw-timeline__number">04</span>
+                        <h3>Get Inline Review Comments</h3>
+                        <p>Comments appear directly in your GitHub PR with clear explanations and actionable
+                            suggestions.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5: Merge -->
+                <div class="hiw-timeline__step animate-on-scroll" data-delay="5">
+                    <div class="hiw-timeline__icon hiw-timeline__icon--success">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div class="hiw-timeline__content">
+                        <span class="hiw-timeline__number">05</span>
+                        <h3>Merge Faster with Confidence</h3>
+                        <p>Fewer review cycles. Higher code quality. Happier teams.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       AI ANALYSIS DEEP DIVE
+       ======================================================================== -->
+    <section class="section hiw-ai" id="ai-analysis">
+        <div class="container">
+            <div class="hiw-ai__inner">
+                <!-- Left: Text -->
+                <div class="hiw-ai__content animate-on-scroll">
+                    <h2>Not Just Linting — Real Code Intelligence</h2>
+                    <p class="hiw-ai__subtitle">PRISM goes beyond syntax checking to understand what your code actually
+                        does.</p>
+
+                    <ul class="hiw-ai__list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span><strong>Semantic code understanding</strong> — analyzes logic, not just
+                                patterns</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span><strong>Framework-aware analysis</strong> — knows React, Vue, Next.js, Django,
+                                Rails</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span><strong>Security & performance insights</strong> — catches vulnerabilities
+                                early</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span><strong>Context-aware suggestions</strong> — understands your codebase history</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: Animated Code Block -->
+                <div class="hiw-ai__visual animate-on-scroll" data-delay="2">
+                    <div class="hiw-ai__code-block">
+                        <div class="hiw-ai__code-header">
+                            <span class="hiw-ai__code-dot hiw-ai__code-dot--red"></span>
+                            <span class="hiw-ai__code-dot hiw-ai__code-dot--yellow"></span>
+                            <span class="hiw-ai__code-dot hiw-ai__code-dot--green"></span>
+                            <span class="hiw-ai__code-title">analyzing code...</span>
+                        </div>
+                        <div class="hiw-ai__code-content" id="aiCodeScanner">
+                            <div class="hiw-ai__code-line" data-scan="1">
+                                <span class="hiw-ai__code-number">1</span>
+                                <span class="hiw-ai__code-text"><span class="syntax-keyword">async</span> <span
+                                        class="syntax-keyword">function</span> <span
+                                        class="syntax-function">processPayment</span>(order) {</span>
+                            </div>
+                            <div class="hiw-ai__code-line" data-scan="2">
+                                <span class="hiw-ai__code-number">2</span>
+                                <span class="hiw-ai__code-text"> <span class="syntax-keyword">const</span> amount =
+                                    order.total;</span>
+                            </div>
+                            <div class="hiw-ai__code-line hiw-ai__code-line--warning" data-scan="3">
+                                <span class="hiw-ai__code-number">3</span>
+                                <span class="hiw-ai__code-text"> <span class="syntax-keyword">const</span> card =
+                                    order.card; <span class="hiw-ai__code-flag"><svg class="icon icon--sm"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                                            <path d="M12 9v4" />
+                                            <path d="M12 17h.01" />
+                                        </svg></span></span>
+                            </div>
+                            <div class="hiw-ai__code-line" data-scan="4">
+                                <span class="hiw-ai__code-number">4</span>
+                                <span class="hiw-ai__code-text"> </span>
+                            </div>
+                            <div class="hiw-ai__code-line hiw-ai__code-line--issue" data-scan="5">
+                                <span class="hiw-ai__code-number">5</span>
+                                <span class="hiw-ai__code-text"> <span class="syntax-keyword">await</span>
+                                    stripe.charge(card, amount); <span class="hiw-ai__code-flag"><svg
+                                            class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <circle cx="11" cy="11" r="8" />
+                                            <path d="m21 21-4.3-4.3" />
+                                        </svg></span></span>
+                            </div>
+                            <div class="hiw-ai__code-line" data-scan="6">
+                                <span class="hiw-ai__code-number">6</span>
+                                <span class="hiw-ai__code-text"> <span class="syntax-keyword">return</span> { <span
+                                        class="syntax-variable">success</span>: <span class="syntax-keyword">true</span>
+                                    };</span>
+                            </div>
+                            <div class="hiw-ai__code-line" data-scan="7">
+                                <span class="hiw-ai__code-number">7</span>
+                                <span class="hiw-ai__code-text">}</span>
+                            </div>
+                        </div>
+                        <div class="hiw-ai__scanner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       GITHUB INTEGRATION FLOW
+       ======================================================================== -->
+    <section class="hiw-integration">
+        <div class="container">
+            <h2 class="hiw-integration__title animate-on-scroll">Seamless GitHub Integration</h2>
+            <p class="hiw-integration__subtitle animate-on-scroll">Secure, read-only access. No code stored permanently.
+            </p>
+
+            <div class="hiw-integration__flow animate-on-scroll" data-delay="1">
+                <div class="hiw-integration__node">
+                    <div class="hiw-integration__node-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </div>
+                    <span>GitHub</span>
+                </div>
+
+                <div class="hiw-integration__line">
+                    <div class="hiw-integration__line-dot"></div>
+                    <span class="hiw-integration__line-label">Secure Webhook</span>
+                </div>
+
+                <div class="hiw-integration__node hiw-integration__node--center">
+                    <div class="hiw-integration__node-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83" />
+                        </svg>
+                    </div>
+                    <span>PRISM AI</span>
+                </div>
+
+                <div class="hiw-integration__line">
+                    <div class="hiw-integration__line-dot"></div>
+                    <span class="hiw-integration__line-label">PR Comments</span>
+                </div>
+
+                <div class="hiw-integration__node">
+                    <div class="hiw-integration__node-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="18" r="3" />
+                            <circle cx="6" cy="6" r="3" />
+                            <path d="M6 21V9a9 9 0 0 0 9 9" />
+                        </svg>
+                    </div>
+                    <span>Your PR</span>
+                </div>
+            </div>
+
+            <div class="hiw-integration__trust animate-on-scroll" data-delay="2">
+                <div class="hiw-integration__trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <span>Encrypted in transit</span>
+                </div>
+                <div class="hiw-integration__trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22,4 12,14.01 9,11.01" />
+                    </svg>
+                    <span>Read-only permissions</span>
+                </div>
+                <div class="hiw-integration__trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18" />
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                    </svg>
+                    <span>No code stored</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       SECURITY & TRUST SECTION
+       ======================================================================== -->
+    <section class="section hiw-security" id="security">
+        <div class="container">
+            <div class="hiw-security__inner">
+                <h2 class="hiw-security__title animate-on-scroll">Enterprise-Grade Security</h2>
+                <p class="hiw-security__subtitle animate-on-scroll">Your code is your competitive advantage. We treat it
+                    that way.</p>
+
+                <div class="hiw-security__grid">
+                    <div class="hiw-security__card animate-on-scroll" data-delay="1">
+                        <div class="hiw-security__card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            </svg>
+                        </div>
+                        <h3>SOC-Ready Architecture</h3>
+                        <p>Built with compliance in mind. Ready for SOC 2 Type II certification.</p>
+                    </div>
+
+                    <div class="hiw-security__card animate-on-scroll" data-delay="2">
+                        <div class="hiw-security__card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 16v-4" />
+                                <path d="M12 8h.01" />
+                            </svg>
+                        </div>
+                        <h3>Read-Only GitHub Access</h3>
+                        <p>We only read your code diffs. No write access, no repository modifications.</p>
+                    </div>
+
+                    <div class="hiw-security__card animate-on-scroll" data-delay="3">
+                        <div class="hiw-security__card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                        </div>
+                        <h3>End-to-End Encryption</h3>
+                        <p>All data encrypted in transit and at rest. Zero plain-text exposure.</p>
+                    </div>
+
+                    <div class="hiw-security__card animate-on-scroll" data-delay="4">
+                        <div class="hiw-security__card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18.36 6.64a9 9 0 1 1-12.73 0" />
+                                <line x1="12" y1="2" x2="12" y2="12" />
+                            </svg>
+                        </div>
+                        <h3>No Training on Private Code</h3>
+                        <p>Your code is never used to train our models. Period.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       DEVELOPER EXPERIENCE SECTION
+       ======================================================================== -->
+    <section class="section hiw-dev">
+        <div class="container">
+            <div class="hiw-dev__inner">
+                <h2 class="hiw-dev__title animate-on-scroll">Built By Developers, For Developers</h2>
+
+                <div class="hiw-dev__grid">
+                    <div class="hiw-dev__point animate-on-scroll" data-delay="1">
+                        <span class="hiw-dev__point-icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg></span>
+                        <div>
+                            <h4>Fast Feedback</h4>
+                            <p>Reviews complete in seconds, not hours.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-dev__point animate-on-scroll" data-delay="2">
+                        <span class="hiw-dev__point-icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg></span>
+                        <div>
+                            <h4>Fewer Nitpicks</h4>
+                            <p>Focus on what matters. Skip the style debates.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-dev__point animate-on-scroll" data-delay="3">
+                        <span class="hiw-dev__point-icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M21 2v6h-6" />
+                                <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+                                <path d="M3 22v-6h6" />
+                                <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+                            </svg></span>
+                        <div>
+                            <h4>Works With Your Workflow</h4>
+                            <p>No new tools to learn. Just better reviews.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-dev__point animate-on-scroll" data-delay="4">
+                        <span class="hiw-dev__point-icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a8 8 0 0 0-8 8c0 4.4 8 12 8 12s8-7.6 8-12A8 8 0 0 0 12 2z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg></span>
+                        <div>
+                            <h4>Context-Aware</h4>
+                            <p>Understands your codebase, not just the diff.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terminal Quote -->
+                <div class="hiw-dev__quote animate-on-scroll" data-delay="3">
+                    <div class="hiw-dev__quote-header">
+                        <span class="hiw-dev__quote-dot"></span>
+                        <span class="hiw-dev__quote-dot"></span>
+                        <span class="hiw-dev__quote-dot"></span>
+                        <span class="hiw-dev__quote-title">terminal</span>
+                    </div>
+                    <div class="hiw-dev__quote-content">
+                        <span class="hiw-dev__quote-prompt">$</span>
+                        <span class="hiw-dev__quote-text">"PRISM caught a race condition that would've taken us days to
+                            debug in production. It's like having a senior engineer review every PR."</span>
+                    </div>
+                    <div class="hiw-dev__quote-author">— Staff Engineer, Series B Startup</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       FINAL CTA SECTION
+       ======================================================================== -->
+    <section class="hiw-cta">
+        <div class="hiw-cta__gradient"></div>
+        <div class="container hiw-cta__container">
+            <h2 class="hiw-cta__title animate-on-scroll">Start Reviewing Code Smarter — Today</h2>
+            <p class="hiw-cta__subtitle animate-on-scroll">Set up in under 60 seconds. Free for open source.</p>
+
+            <div class="hiw-cta__actions animate-on-scroll" data-delay="1">
+                <a href="/#install" class="btn btn--light">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                    Connect GitHub
+                </a>
+                <a href="/#demo" class="btn btn--outline-light">View Sample Review</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       FOOTER (Exact copy from index.html)
+       ======================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">PRISM</div>
+                    <p class="footer__tagline">Clarity before every merge.</p>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Product</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#features" class="footer__link">Features</a></li>
+                        <li><a href="pricing.html" class="footer__link">Pricing</a></li>
+                        <li><a href="#changelog" class="footer__link">Changelog</a></li>
+                        <li><a href="#roadmap" class="footer__link">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Docs</h4>
+                    <ul class="footer__links">
+                        <li><a href="/#docs" class="footer__link">Getting Started</a></li>
+                        <li><a href="/#docs" class="footer__link">Configuration</a></li>
+                        <li><a href="/#docs" class="footer__link">API Reference</a></li>
+                        <li><a href="/#docs" class="footer__link">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="/#about" class="footer__link">About</a></li>
+                        <li><a href="/#blog" class="footer__link">Blog</a></li>
+                        <li><a href="/#careers" class="footer__link">Careers</a></li>
+                        <li><a href="/#contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="/#privacy" class="footer__link">Privacy</a></li>
+                        <li><a href="/#terms" class="footer__link">Terms</a></li>
+                        <li><a href="/#security" class="footer__link">Security</a></li>
+                        <li><a href="/#cookies" class="footer__link">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <span>&copy; 2026 PRISM. All rights reserved.</span>
+                <div class="footer__legal">
+                    <a href="/#privacy" class="footer__link">Privacy Policy</a>
+                    <a href="/#terms" class="footer__link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+       SCRIPTS
+       ======================================================================== -->
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <script>
+        // =====================================================================
+        // Reduced Motion & Performance Checks
+        // =====================================================================
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2;
+        const shouldAnimate = !prefersReducedMotion && !isLowEndDevice;
+
+        // =====================================================================
+        // Lenis Smooth Scroll
+        // =====================================================================
+        let lenis;
+        if (!prefersReducedMotion) {
+            lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                orientation: 'vertical',
+                gestureOrientation: 'vertical',
+                smoothWheel: true,
+                wheelMultiplier: 1,
+                touchMultiplier: 2,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+
+        // =====================================================================
+        // Navbar Scroll Behavior
+        // =====================================================================
+        const nav = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // =====================================================================
+        // Mobile Menu Toggle
+        // =====================================================================
+        const mobileToggle = document.querySelector('.navbar__mobile-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('is-active');
+                mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+            });
+
+            // Close menu on link click
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('is-active');
+                    mobileMenu.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // =====================================================================
+        // Smooth Scroll for Anchor Links
+        // =====================================================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    if (lenis) {
+                        lenis.scrollTo(target, { offset: 0 });
+                    } else {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // =====================================================================
+        // Scroll Animations (Intersection Observer)
+        // =====================================================================
+        if (!prefersReducedMotion) {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(el => scrollObserver.observe(el));
+        }
+
+        // =====================================================================
+        // Hero Flow Animation
+        // =====================================================================
+        if (shouldAnimate) {
+            const flowSteps = document.querySelectorAll('.hiw-hero__flow-step');
+            const flowArrows = document.querySelectorAll('.hiw-hero__flow-arrow');
+
+            // Stagger animation on load
+            flowSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateY(0)';
+                }, 300 + (index * 150));
+            });
+
+            flowArrows.forEach((arrow, index) => {
+                arrow.style.opacity = '0';
+
+                setTimeout(() => {
+                    arrow.style.transition = 'opacity 0.4s ease';
+                    arrow.style.opacity = '1';
+                }, 500 + (index * 150));
+            });
+        }
+
+        // =====================================================================
+        // AI Code Scanner Animation
+        // =====================================================================
+        if (shouldAnimate) {
+            const aiSection = document.querySelector('.hiw-ai');
+            const codeScanner = document.getElementById('aiCodeScanner');
+
+            if (aiSection && codeScanner) {
+                let hasPlayed = false;
+
+                const scanObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !hasPlayed) {
+                            hasPlayed = true;
+
+                            const lines = codeScanner.querySelectorAll('.hiw-ai__code-line');
+                            const scanner = codeScanner.parentElement.querySelector('.hiw-ai__scanner');
+
+                            if (scanner) {
+                                scanner.classList.add('is-scanning');
+                            }
+
+                            lines.forEach((line, index) => {
+                                setTimeout(() => {
+                                    line.classList.add('is-scanned');
+                                }, 300 + (index * 400));
+                            });
+
+                            // Stop scanner after all lines
+                            setTimeout(() => {
+                                if (scanner) {
+                                    scanner.classList.remove('is-scanning');
+                                    scanner.classList.add('is-complete');
+                                }
+                            }, 300 + (lines.length * 400) + 500);
+                        }
+                    });
+                }, { threshold: 0.4 });
+
+                scanObserver.observe(aiSection);
+            }
+        }
+
+        // =====================================================================
+        // Reduced Motion Fallback
+        // =====================================================================
+        if (!shouldAnimate) {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                el.classList.add('is-visible');
+            });
+
+            document.querySelectorAll('.hiw-hero__flow-step, .hiw-hero__flow-arrow').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+
+            document.querySelectorAll('.hiw-ai__code-line').forEach(el => {
+                el.classList.add('is-scanned');
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="PRISM Pricing - Simple pricing for serious code intelligence. Choose the plan that fits your team.">
+    <title>Pricing — PRISM</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========================================================================
+       NAVBAR
+       ======================================================================== -->
+    <nav class="navbar">
+        <div class="navbar__container">
+
+            <!-- Left: Logo -->
+            <a href="index.html" class="navbar__logo">PRISM</a>
+
+            <!-- Center: Navigation Links -->
+            <ul class="navbar__nav">
+                <li>
+                    <a href="index.html#features" class="navbar__link">
+                        Features
+                        <span class="navbar__link-arrow">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="how-it-works.html" class="navbar__link">
+                        How it Works
+                        <span class="navbar__link-arrow">↓</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#docs" class="navbar__link">Docs</a>
+                </li>
+                <li>
+                    <a href="pricing.html" class="navbar__link navbar__link--active">Pricing</a>
+                </li>
+            </ul>
+
+            <!-- Right: Actions -->
+            <div class="navbar__actions">
+                <a href="https://github.com" class="navbar__github" target="_blank" rel="noopener">
+                    <svg class="navbar__github-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>2.4k</span>
+                </a>
+
+                <a href="#install" class="navbar__cta">Install PRISM</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar__mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__nav">
+            <a href="index.html#features" class="mobile-menu__link">
+                Features
+                <span class="mobile-menu__link-arrow">↗</span>
+            </a>
+            <a href="how-it-works.html" class="mobile-menu__link">
+                How it Works
+                <span class="mobile-menu__link-arrow">↓</span>
+            </a>
+            <a href="#docs" class="mobile-menu__link">Docs</a>
+            <a href="pricing.html" class="mobile-menu__link mobile-menu__link--active">Pricing</a>
+        </nav>
+        <a href="#install" class="mobile-menu__cta">Install PRISM</a>
+    </div>
+
+    <!-- ========================================================================
+       PRICING HERO
+       ======================================================================== -->
+    <section class="pricing-hero">
+        <div class="pricing-hero__content">
+            <!-- Animated accent line -->
+            <div class="pricing-hero__accent"></div>
+
+            <h1 class="pricing-hero__headline">
+                <span class="pricing-hero__headline-line">Simple pricing.</span>
+                <span class="pricing-hero__headline-line pricing-hero__headline-emphasis">Serious code
+                    intelligence.</span>
+            </h1>
+
+            <p class="pricing-hero__subheadline">
+                Start free. Scale with your team. No credit card required.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       PRICING TOGGLE
+       ======================================================================== -->
+    <section class="pricing-toggle-section">
+        <div class="container">
+            <div class="pricing-toggle" id="pricingToggle">
+                <span class="pricing-toggle__label" data-period="monthly">Monthly</span>
+                <button class="pricing-toggle__switch" id="toggleSwitch" aria-label="Toggle billing period">
+                    <span class="pricing-toggle__slider"></span>
+                </button>
+                <span class="pricing-toggle__label" data-period="yearly">
+                    Yearly
+                    <span class="pricing-toggle__badge">Save 20%</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       PRICING CARDS
+       ======================================================================== -->
+    <section class="pricing-cards">
+        <div class="container">
+            <div class="pricing-cards__grid">
+
+                <!-- FREE PLAN -->
+                <article class="pricing-card animate-on-scroll" data-delay="1">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Free</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount" data-monthly="0" data-yearly="0">$0</span>
+                            <span class="pricing-card__period">/ forever</span>
+                        </div>
+                        <p class="pricing-card__description">
+                            For individual developers exploring smarter PR reviews.
+                        </p>
+                    </div>
+
+                    <ul class="pricing-card__features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>1 repository</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>50 PR reviews / month</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Basic code analysis</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Community support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#install" class="pricing-card__cta pricing-card__cta--outline">
+                        Get Started Free
+                    </a>
+                </article>
+
+                <!-- PRO PLAN (POPULAR) -->
+                <article class="pricing-card pricing-card--popular animate-on-scroll" data-delay="2">
+                    <div class="pricing-card__badge">Most Popular</div>
+                    <div class="pricing-card__glow"></div>
+
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Pro</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount" data-monthly="29" data-yearly="24">$29</span>
+                            <span class="pricing-card__period">/ month</span>
+                        </div>
+                        <p class="pricing-card__description">
+                            For serious developers who ship with confidence.
+                        </p>
+                    </div>
+
+                    <ul class="pricing-card__features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Unlimited repositories</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Unlimited PR reviews</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Deep context analysis</span>
+                            <button class="pricing-tooltip"
+                                data-tooltip="PRISM analyzes your entire codebase for architectural context, not just the diff.">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4" />
+                                    <path d="M12 8h.01" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Security vulnerability detection</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Custom rules (.prism.yml)</span>
+                            <button class="pricing-tooltip"
+                                data-tooltip="Configure sensitivity, ignored paths, and custom patterns per repository.">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4" />
+                                    <path d="M12 8h.01" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Priority email support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#install" class="pricing-card__cta">
+                        Start Pro Trial
+                    </a>
+                </article>
+
+                <!-- TEAM PLAN -->
+                <article class="pricing-card animate-on-scroll" data-delay="3">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__name">Team</h3>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount" data-monthly="79" data-yearly="65">$79</span>
+                            <span class="pricing-card__period">/ month</span>
+                        </div>
+                        <p class="pricing-card__description">
+                            For engineering teams shipping at scale.
+                        </p>
+                    </div>
+
+                    <ul class="pricing-card__features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Everything in Pro</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Up to 25 team members</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Organization-wide rules</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Slack & Discord integration</span>
+                            <button class="pricing-tooltip"
+                                data-tooltip="Get notified instantly when PRISM flags critical issues in your team's PRs.">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4" />
+                                    <path d="M12 8h.01" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Analytics dashboard</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Dedicated support</span>
+                        </li>
+                    </ul>
+
+                    <a href="#install" class="pricing-card__cta pricing-card__cta--outline">
+                        Start Team Trial
+                    </a>
+                </article>
+
+            </div>
+
+            <!-- Enterprise CTA -->
+            <div class="pricing-enterprise animate-on-scroll">
+                <div class="pricing-enterprise__content">
+                    <h4>Need enterprise features?</h4>
+                    <p>SSO, SAML, dedicated infrastructure, custom SLAs, and unlimited seats.</p>
+                </div>
+                <a href="#contact" class="pricing-enterprise__cta">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       FEATURE COMPARISON
+       ======================================================================== -->
+    <section class="pricing-comparison section" id="comparison">
+        <div class="container">
+            <button class="pricing-comparison__toggle" id="comparisonToggle">
+                <span>Compare all features</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg>
+            </button>
+
+            <div class="pricing-comparison__table" id="comparisonTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Free</th>
+                            <th>Pro</th>
+                            <th>Team</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Repositories</td>
+                            <td>1</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>PR reviews / month</td>
+                            <td>50</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Team members</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>Up to 25</td>
+                        </tr>
+                        <tr>
+                            <td>Deep context analysis</td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                        </tr>
+                        <tr>
+                            <td>Security detection</td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                        </tr>
+                        <tr>
+                            <td>Custom rules</td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                        </tr>
+                        <tr>
+                            <td>Org-wide rules</td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                        </tr>
+                        <tr>
+                            <td>Slack / Discord</td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                        </tr>
+                        <tr>
+                            <td>Analytics</td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-no">—</span></td>
+                            <td><span class="comparison-yes"><svg class="icon icon--sm" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22,4 12,14.01 9,11.01" />
+                                    </svg></span></td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td>Community</td>
+                            <td>Priority email</td>
+                            <td>Dedicated</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       BUILT FOR DEVELOPERS
+       ======================================================================== -->
+    <section class="pricing-devs section">
+        <div class="container">
+            <h2 class="pricing-devs__title animate-on-scroll">Built for developers who ship.</h2>
+
+            <div class="pricing-devs__grid">
+                <div class="pricing-devs__item animate-on-scroll" data-delay="1">
+                    <div class="pricing-devs__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg></div>
+                    <h4>No noise. Just signal.</h4>
+                    <p>Every suggestion is actionable. No vague "consider refactoring" comments.</p>
+                </div>
+                <div class="pricing-devs__item animate-on-scroll" data-delay="2">
+                    <div class="pricing-devs__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg></div>
+                    <h4>Your code stays yours.</h4>
+                    <p>Read-only access. Zero training on private repos. SOC 2 ready.</p>
+                </div>
+                <div class="pricing-devs__item animate-on-scroll" data-delay="3">
+                    <div class="pricing-devs__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                            <path
+                                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                        </svg></div>
+                    <h4>Setup in 60 seconds.</h4>
+                    <p>One-click GitHub install. No config required. Works immediately.</p>
+                </div>
+                <div class="pricing-devs__item animate-on-scroll" data-delay="4">
+                    <div class="pricing-devs__icon"><svg class="icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <circle cx="12" cy="12" r="6" />
+                            <circle cx="12" cy="12" r="2" />
+                        </svg></div>
+                    <h4>Catches what humans miss.</h4>
+                    <p>Race conditions, security holes, anti-patterns—before merge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       FAQ SECTION
+       ======================================================================== -->
+    <section class="pricing-faq section" id="faq">
+        <div class="container">
+            <h2 class="pricing-faq__title animate-on-scroll">Frequently asked questions</h2>
+
+            <div class="pricing-faq__list">
+                <div class="pricing-faq__item animate-on-scroll" data-delay="1">
+                    <button class="pricing-faq__question">
+                        <span>Can I try Pro features before committing?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div class="pricing-faq__answer">
+                        <p>Yes! Every paid plan includes a 14-day free trial with full access to all features. No credit
+                            card required to start.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-faq__item animate-on-scroll" data-delay="2">
+                    <button class="pricing-faq__question">
+                        <span>What happens when I exceed the free tier limits?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div class="pricing-faq__answer">
+                        <p>PRISM will notify you when you're approaching limits. After 50 reviews, new PRs won't be
+                            analyzed until the next billing cycle—but your existing comments remain accessible.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-faq__item animate-on-scroll" data-delay="3">
+                    <button class="pricing-faq__question">
+                        <span>Is my code used to train AI models?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div class="pricing-faq__answer">
+                        <p>No. Never. Your code is processed in real-time and immediately discarded. We don't store,
+                            log, or train on any private repository code. Period.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-faq__item animate-on-scroll" data-delay="4">
+                    <button class="pricing-faq__question">
+                        <span>Can I switch plans anytime?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div class="pricing-faq__answer">
+                        <p>Absolutely. Upgrade, downgrade, or cancel anytime. Downgrades take effect at the end of your
+                            current billing cycle. No lock-in, no penalties.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-faq__item animate-on-scroll" data-delay="5">
+                    <button class="pricing-faq__question">
+                        <span>What GitHub permissions does PRISM need?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div class="pricing-faq__answer">
+                        <p>PRISM requires read-only access to repository contents and pull requests. We cannot modify
+                            code, merge PRs, or access secrets. Full permission breakdown available in our docs.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-faq__item animate-on-scroll" data-delay="6">
+                    <button class="pricing-faq__question">
+                        <span>Do you offer discounts for open source projects?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <div class="pricing-faq__answer">
+                        <p>Yes! Open source maintainers get Pro features for free. Contact us with your project link to
+                            apply.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       FINAL CTA
+       ======================================================================== -->
+    <section class="pricing-cta">
+        <div class="pricing-cta__glow"></div>
+        <div class="container">
+            <div class="pricing-cta__content">
+                <h2>Ship smarter. Start free.</h2>
+                <p>Join thousands of developers who catch bugs before humans do.</p>
+                <div class="pricing-cta__actions">
+                    <a href="#install" class="btn btn--light">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                        Install PRISM on GitHub
+                    </a>
+                    <a href="#comparison" class="btn btn--outline-light">Compare Plans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">PRISM</div>
+                    <p class="footer__tagline">Clarity before every merge.</p>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Product</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#features" class="footer__link">Features</a></li>
+                        <li><a href="pricing.html" class="footer__link">Pricing</a></li>
+                        <li><a href="#changelog" class="footer__link">Changelog</a></li>
+                        <li><a href="#roadmap" class="footer__link">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Docs</h4>
+                    <ul class="footer__links">
+                        <li><a href="#docs" class="footer__link">Getting Started</a></li>
+                        <li><a href="#docs" class="footer__link">Configuration</a></li>
+                        <li><a href="#docs" class="footer__link">API Reference</a></li>
+                        <li><a href="#docs" class="footer__link">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#blog" class="footer__link">Blog</a></li>
+                        <li><a href="#careers" class="footer__link">Careers</a></li>
+                        <li><a href="#contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#privacy" class="footer__link">Privacy</a></li>
+                        <li><a href="#terms" class="footer__link">Terms</a></li>
+                        <li><a href="#security" class="footer__link">Security</a></li>
+                        <li><a href="#cookies" class="footer__link">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <span>&copy; 2026 PRISM. All rights reserved.</span>
+                <div class="footer__legal">
+                    <a href="#privacy" class="footer__link">Privacy Policy</a>
+                    <a href="#terms" class="footer__link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+       SCRIPTS
+       ======================================================================== -->
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <script>
+        // =====================================================================
+        // Reduced Motion & Performance Checks
+        // =====================================================================
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2;
+        const shouldAnimate = !prefersReducedMotion && !isLowEndDevice;
+
+        // =====================================================================
+        // Lenis Smooth Scroll
+        // =====================================================================
+        let lenis;
+        if (!prefersReducedMotion) {
+            lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                orientation: 'vertical',
+                gestureOrientation: 'vertical',
+                smoothWheel: true,
+                wheelMultiplier: 1,
+                touchMultiplier: 2,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+
+        // =====================================================================
+        // Navbar Scroll Behavior
+        // =====================================================================
+        const nav = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // =====================================================================
+        // Mobile Menu Toggle
+        // =====================================================================
+        const mobileToggle = document.querySelector('.navbar__mobile-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('is-active');
+                mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('is-active');
+                    mobileMenu.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // =====================================================================
+        // Smooth Scroll for Anchor Links
+        // =====================================================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    if (lenis) {
+                        lenis.scrollTo(target, { offset: 0 });
+                    } else {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // =====================================================================
+        // Scroll Animations (Intersection Observer)
+        // =====================================================================
+        if (!prefersReducedMotion) {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(el => scrollObserver.observe(el));
+        } else {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                el.classList.add('is-visible');
+            });
+        }
+
+        // =====================================================================
+        // Pricing Toggle (Monthly/Yearly)
+        // =====================================================================
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const pricingToggle = document.getElementById('pricingToggle');
+        let isYearly = false;
+
+        if (toggleSwitch) {
+            toggleSwitch.addEventListener('click', () => {
+                isYearly = !isYearly;
+                pricingToggle.classList.toggle('is-yearly', isYearly);
+
+                // Update all prices with smooth transition
+                document.querySelectorAll('.pricing-card__amount').forEach(el => {
+                    const monthly = el.dataset.monthly;
+                    const yearly = el.dataset.yearly;
+                    const price = isYearly ? yearly : monthly;
+
+                    // Animate price change
+                    el.classList.add('pricing-card__amount--changing');
+                    setTimeout(() => {
+                        el.textContent = price === '0' ? '$0' : `$${price}`;
+                        el.classList.remove('pricing-card__amount--changing');
+                    }, 150);
+                });
+
+                // Update period text
+                document.querySelectorAll('.pricing-card__period').forEach(el => {
+                    const card = el.closest('.pricing-card');
+                    const isFree = card.querySelector('.pricing-card__amount').dataset.monthly === '0';
+                    if (!isFree) {
+                        el.textContent = '/ month';
+                    }
+                });
+            });
+        }
+
+        // =====================================================================
+        // Feature Comparison Toggle
+        // =====================================================================
+        const comparisonToggle = document.getElementById('comparisonToggle');
+        const comparisonTable = document.getElementById('comparisonTable');
+
+        if (comparisonToggle && comparisonTable) {
+            comparisonToggle.addEventListener('click', () => {
+                comparisonToggle.classList.toggle('is-open');
+                comparisonTable.classList.toggle('is-open');
+            });
+        }
+
+        // =====================================================================
+        // FAQ Accordion
+        // =====================================================================
+        const faqItems = document.querySelectorAll('.pricing-faq__item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.pricing-faq__question');
+
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('is-open');
+
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('is-open'));
+
+                // Open clicked item if it wasn't open
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                }
+            });
+        });
+
+        // =====================================================================
+        // Tooltips
+        // =====================================================================
+        const tooltips = document.querySelectorAll('.pricing-tooltip');
+
+        tooltips.forEach(tooltip => {
+            const text = tooltip.dataset.tooltip;
+
+            tooltip.addEventListener('mouseenter', (e) => {
+                const tip = document.createElement('div');
+                tip.className = 'pricing-tooltip__popup';
+                tip.textContent = text;
+                document.body.appendChild(tip);
+
+                const rect = tooltip.getBoundingClientRect();
+                tip.style.top = `${rect.top - tip.offsetHeight - 8}px`;
+                tip.style.left = `${rect.left + (rect.width / 2) - (tip.offsetWidth / 2)}px`;
+
+                setTimeout(() => tip.classList.add('is-visible'), 10);
+
+                tooltip._tip = tip;
+            });
+
+            tooltip.addEventListener('mouseleave', () => {
+                if (tooltip._tip) {
+                    tooltip._tip.classList.remove('is-visible');
+                    setTimeout(() => {
+                        if (tooltip._tip && tooltip._tip.parentNode) {
+                            tooltip._tip.parentNode.removeChild(tooltip._tip);
+                        }
+                    }, 200);
+                }
+            });
+        });
+
+        // =====================================================================
+        // Page Load Animation
+        // =====================================================================
+        window.addEventListener('load', () => {
+            document.body.classList.add('is-loaded');
+
+            // Stagger hero elements
+            if (shouldAnimate) {
+                const heroElements = document.querySelectorAll('.pricing-hero__accent, .pricing-hero__headline-line, .pricing-hero__subheadline');
+                heroElements.forEach((el, i) => {
+                    el.style.transitionDelay = `${i * 100}ms`;
+                    el.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

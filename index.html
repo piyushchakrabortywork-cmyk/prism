@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRISM - AI-powered GitHub Pull Request Intelligence. Clarity before every merge.">
+    <title>PRISM — PR Intelligence</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========================================================================
+       NAVBAR
+       ======================================================================== -->
+    <nav class="navbar">
+        <div class="navbar__container">
+
+            <!-- Left: Logo -->
+            <a href="/" class="navbar__logo">PRISM</a>
+
+            <!-- Center: Navigation Links -->
+            <ul class="navbar__nav">
+                <li>
+                    <a href="#features" class="navbar__link">
+                        Features
+                        <span class="navbar__link-arrow">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="how-it-works.html" class="navbar__link">
+                        How it Works
+                        <span class="navbar__link-arrow">↓</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#docs" class="navbar__link">Docs</a>
+                </li>
+                <li>
+                    <a href="pricing.html" class="navbar__link">Pricing</a>
+                </li>
+            </ul>
+
+            <!-- Right: Actions -->
+            <div class="navbar__actions">
+                <a href="https://github.com" class="navbar__github" target="_blank" rel="noopener">
+                    <svg class="navbar__github-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>2.4k</span>
+                </a>
+
+                <a href="#install" class="navbar__cta">Install PRISM</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar__mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__nav">
+            <a href="#features" class="mobile-menu__link">
+                Features
+                <span class="mobile-menu__link-arrow">↗</span>
+            </a>
+            <a href="how-it-works.html" class="mobile-menu__link">
+                How it Works
+                <span class="mobile-menu__link-arrow">↓</span>
+            </a>
+            <a href="#docs" class="mobile-menu__link">Docs</a>
+            <a href="pricing.html" class="mobile-menu__link">Pricing</a>
+        </nav>
+        <a href="#install" class="mobile-menu__cta">Install PRISM</a>
+    </div>
+
+    <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+    <section class="hero">
+        <div class="hero__content">
+
+            <!-- Status Badge -->
+            <div class="hero__badge">
+                <span class="hero__badge-dot"></span>
+                <span class="hero__badge-text">github app</span>
+                <span class="hero__badge-separator">/</span>
+                <span class="hero__badge-text">live</span>
+            </div>
+
+            <!-- Main Headline (2 lines) -->
+            <h1 class="hero__headline">
+                <span class="hero__headline-line">PR <span class="hero__headline-emphasis">Intelligence</span>
+                    that</span>
+                <span class="hero__headline-line">ships with <span
+                        class="hero__headline-emphasis">confidence</span></span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="hero__subheadline">
+                PRISM reviews your GitHub pull requests with deep context — catching bugs, security issues, and
+                architectural flaws before merge.
+            </p>
+
+            <!-- Primary CTA -->
+            <a href="#install" class="hero__cta">
+                <span class="hero__cta-bracket">(</span>
+                <svg class="hero__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                <span>Install PRISM</span>
+                <span class="hero__cta-bracket">)</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       TRUST SIGNALS
+       ======================================================================== -->
+    <section class="trust">
+        <div class="container">
+            <ul class="trust__list">
+                <li class="trust__item">Works with GitHub</li>
+                <li class="trust__item">Built for teams</li>
+                <li class="trust__item">Secure by default</li>
+                <li class="trust__item">Privacy-first</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       CORE VALUE SECTION
+       ======================================================================== -->
+    <section class="section value" id="features">
+        <div class="container">
+            <h2 class="value__title animate-on-scroll">Understand every pull request — instantly.</h2>
+
+            <div class="value__grid">
+                <article class="value__card animate-on-scroll" data-delay="1">
+                    <div class="value__card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 16v-4" />
+                            <path d="M12 8h.01" />
+                        </svg>
+                    </div>
+                    <h3>Contextual Reviews</h3>
+                    <p>Understands your codebase, not just the diff. PRISM analyzes the full context of every change.
+                    </p>
+                </article>
+
+                <article class="value__card animate-on-scroll" data-delay="2">
+                    <div class="value__card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22,4 12,14.01 9,11.01" />
+                        </svg>
+                    </div>
+                    <h3>Actionable Suggestions</h3>
+                    <p>Clear reasoning, not vague comments. Every suggestion comes with an explanation you can act on.
+                    </p>
+                </article>
+
+                <article class="value__card animate-on-scroll" data-delay="3">
+                    <div class="value__card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
+                    <h3>Safe & Secure</h3>
+                    <p>No training on your private code. Your intellectual property stays yours.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       PRODUCT PREVIEW (DARK SECTION)
+       ======================================================================== -->
+    <section class="preview" id="demo">
+        <div class="container">
+            <div class="preview__header">
+                <h2>See PRISM in action</h2>
+            </div>
+
+            <div class="preview__layout">
+                <!-- Side content - visible immediately -->
+                <aside class="preview__features">
+                    <h3 class="preview__features-title">What PRISM catches</h3>
+                    <ul class="preview__features-list">
+                        <li class="preview__features-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Race conditions</span>
+                        </li>
+                        <li class="preview__features-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Security vulnerabilities</span>
+                        </li>
+                        <li class="preview__features-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Anti-patterns</span>
+                        </li>
+                        <li class="preview__features-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Architecture violations</span>
+                        </li>
+                        <li class="preview__features-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22,4 12,14.01 9,11.01" />
+                            </svg>
+                            <span>Performance bottlenecks</span>
+                        </li>
+                    </ul>
+                </aside>
+
+                <div class="preview__terminal">
+                    <div class="preview__terminal-header">
+                        <span class="preview__terminal-dot preview__terminal-dot--red"></span>
+                        <span class="preview__terminal-dot preview__terminal-dot--yellow"></span>
+                        <span class="preview__terminal-dot preview__terminal-dot--green"></span>
+                        <span class="preview__terminal-title">pull-request-review.diff</span>
+                    </div>
+
+                    <div class="preview__code">
+                        <div class="preview__code-line">
+                            <span class="preview__code-line--number">42</span>
+                            <span class="preview__code-line--content"><span class="syntax-keyword">async</span> <span
+                                    class="syntax-keyword">function</span> <span
+                                    class="syntax-function">fetchUserData</span>(userId) {</span>
+                        </div>
+                        <div class="preview__code-line preview__code-line--deletion">
+                            <span class="preview__code-line--number">43</span>
+                            <span class="preview__code-line--content">- <span class="syntax-keyword">const</span> user =
+                                <span class="syntax-keyword">await</span> db.users.find(userId);</span>
+                        </div>
+                        <div class="preview__code-line preview__code-line--deletion">
+                            <span class="preview__code-line--number">44</span>
+                            <span class="preview__code-line--content">- <span class="syntax-keyword">const</span> posts
+                                =
+                                <span class="syntax-keyword">await</span> db.posts.findByUser(userId);</span>
+                        </div>
+                        <div class="preview__code-line preview__code-line--addition">
+                            <span class="preview__code-line--number">43</span>
+                            <span class="preview__code-line--content">+ <span class="syntax-keyword">const</span> [user,
+                                posts] = <span class="syntax-keyword">await</span> Promise.all([</span>
+                        </div>
+                        <div class="preview__code-line preview__code-line--addition">
+                            <span class="preview__code-line--number">44</span>
+                            <span class="preview__code-line--content">+ db.users.find(userId),</span>
+                        </div>
+                        <div class="preview__code-line preview__code-line--addition">
+                            <span class="preview__code-line--number">45</span>
+                            <span class="preview__code-line--content">+ db.posts.findByUser(userId)</span>
+                        </div>
+                        <div class="preview__code-line preview__code-line--addition">
+                            <span class="preview__code-line--number">46</span>
+                            <span class="preview__code-line--content">+ ]);</span>
+                        </div>
+
+                        <div class="preview__ai-comment">
+                            <div class="preview__ai-comment-header">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg>
+                                PRISM AI
+                            </div>
+                            <p class="preview__ai-comment-text">
+                                <strong>Race condition detected.</strong> The original sequential fetches could return
+                                stale
+                                data if the user record is updated between calls. Using <code>Promise.all()</code>
+                                ensures
+                                both queries reference the same point in time. Good catch!
+                            </p>
+                        </div>
+
+                        <div class="preview__code-line">
+                            <span class="preview__code-line--number">47</span>
+                            <span class="preview__code-line--content"> <span class="syntax-keyword">return</span> {
+                                user,
+                                posts };</span>
+                        </div>
+                        <div class="preview__code-line">
+                            <span class="preview__code-line--number">48</span>
+                            <span class="preview__code-line--content">}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="preview__caption">"PRISM caught a race condition before CI did."</p>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       HOW IT WORKS
+       ======================================================================== -->
+    <section class="section steps" id="how-it-works">
+        <div class="container">
+            <h2 class="steps__title animate-on-scroll">How PRISM Works</h2>
+
+            <div class="steps__grid">
+                <div class="step animate-on-scroll" data-delay="1">
+                    <div class="step__number">1</div>
+                    <h3>Install GitHub App</h3>
+                    <p>Connect PRISM to your repository in under a minute. No code changes required.</p>
+                </div>
+
+                <div class="step animate-on-scroll" data-delay="2">
+                    <div class="step__number">2</div>
+                    <h3>Open a Pull Request</h3>
+                    <p>Create a PR as you normally would. PRISM automatically begins analysis.</p>
+                </div>
+
+                <div class="step animate-on-scroll" data-delay="3">
+                    <div class="step__number">3</div>
+                    <h3>Receive Intelligent Review</h3>
+                    <p>Get contextual feedback inline, right where you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       DEVELOPER-FIRST SECTION
+       ======================================================================== -->
+    <section class="section developer">
+        <div class="container developer__inner">
+            <div class="developer__content animate-on-scroll">
+                <h2>Built for serious engineering teams.</h2>
+                <ul class="developer__list">
+                    <li class="developer__item">Supports monorepos and complex project structures</li>
+                    <li class="developer__item">Understands architectural patterns and design systems</li>
+                    <li class="developer__item">Custom rules per repository or organization</li>
+                    <li class="developer__item">Works seamlessly with existing CI/CD pipelines</li>
+                    <li class="developer__item">Integrates with Slack, Discord, and your workflow</li>
+                </ul>
+            </div>
+
+            <div class="developer__visual animate-on-scroll" data-delay="2">
+                <div class="developer__code-block">
+                    <div style="color: rgba(255,255,255,0.5); margin-bottom: 12px;"># .prism.yml</div>
+                    <div><span class="syntax-variable">rules</span>:</div>
+                    <div style="padding-left: 16px;"><span class="syntax-variable">security</span>: <span
+                            class="syntax-string">strict</span></div>
+                    <div style="padding-left: 16px;"><span class="syntax-variable">performance</span>: <span
+                            class="syntax-string">enabled</span></div>
+                    <div style="padding-left: 16px;"><span class="syntax-variable">complexity_threshold</span>: <span
+                            class="syntax-number">15</span></div>
+                    <div style="margin-top: 12px;"><span class="syntax-variable">ignore</span>:</div>
+                    <div style="padding-left: 16px;">- <span class="syntax-string">vendor/**</span></div>
+                    <div style="padding-left: 16px;">- <span class="syntax-string">*.generated.ts</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       SECURITY & PRIVACY SECTION
+       ======================================================================== -->
+    <section class="section security">
+        <div class="container">
+            <div class="security__inner">
+                <h2 class="security__title animate-on-scroll">Enterprise-grade security.</h2>
+                <p class="security__subtitle animate-on-scroll">Your code stays your code. Always.</p>
+
+                <div class="security__grid">
+                    <div class="security__item animate-on-scroll" data-delay="1">
+                        <svg class="security__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22,4 12,14.01 9,11.01" />
+                        </svg>
+                        <span>Read-only GitHub permissions</span>
+                    </div>
+
+                    <div class="security__item animate-on-scroll" data-delay="2">
+                        <svg class="security__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22,4 12,14.01 9,11.01" />
+                        </svg>
+                        <span>No code stored after analysis</span>
+                    </div>
+
+                    <div class="security__item animate-on-scroll" data-delay="3">
+                        <svg class="security__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22,4 12,14.01 9,11.01" />
+                        </svg>
+                        <span>SOC 2 Type II ready architecture</span>
+                    </div>
+
+                    <div class="security__item animate-on-scroll" data-delay="4">
+                        <svg class="security__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22,4 12,14.01 9,11.01" />
+                        </svg>
+                        <span>GDPR and CCPA compliant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       CALL TO ACTION
+       ======================================================================== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ship with confidence.</h2>
+            <div class="cta__actions">
+                <a href="#install" class="btn btn--light">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                    Install PRISM on GitHub
+                </a>
+                <a href="#docs" class="btn btn--outline-light">Read the Docs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">PRISM</div>
+                    <p class="footer__tagline">Clarity before every merge.</p>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Product</h4>
+                    <ul class="footer__links">
+                        <li><a href="#features" class="footer__link">Features</a></li>
+                        <li><a href="#pricing" class="footer__link">Pricing</a></li>
+                        <li><a href="#changelog" class="footer__link">Changelog</a></li>
+                        <li><a href="#roadmap" class="footer__link">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Docs</h4>
+                    <ul class="footer__links">
+                        <li><a href="#docs" class="footer__link">Getting Started</a></li>
+                        <li><a href="#docs" class="footer__link">Configuration</a></li>
+                        <li><a href="#docs" class="footer__link">API Reference</a></li>
+                        <li><a href="#docs" class="footer__link">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="#about" class="footer__link">About</a></li>
+                        <li><a href="#blog" class="footer__link">Blog</a></li>
+                        <li><a href="#careers" class="footer__link">Careers</a></li>
+                        <li><a href="#contact" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#privacy" class="footer__link">Privacy</a></li>
+                        <li><a href="#terms" class="footer__link">Terms</a></li>
+                        <li><a href="#security" class="footer__link">Security</a></li>
+                        <li><a href="#cookies" class="footer__link">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <span>&copy; 2026 PRISM. All rights reserved.</span>
+                <div class="footer__legal">
+                    <a href="#privacy" class="footer__link">Privacy Policy</a>
+                    <a href="#terms" class="footer__link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+       SCRIPTS
+       ======================================================================== -->
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <script>
+        // =====================================================================
+        // Reduced Motion & Performance Checks
+        // =====================================================================
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2;
+        const shouldAnimate = !prefersReducedMotion && !isLowEndDevice;
+
+        // =====================================================================
+        // Lenis Smooth Scroll
+        // =====================================================================
+        let lenis;
+        if (!prefersReducedMotion) {
+            lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                orientation: 'vertical',
+                gestureOrientation: 'vertical',
+                smoothWheel: true,
+                wheelMultiplier: 1,
+                touchMultiplier: 2,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+
+        // =====================================================================
+        // Navbar Scroll Behavior
+        // =====================================================================
+        const nav = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // =====================================================================
+        // Mobile Menu Toggle
+        // =====================================================================
+        const mobileToggle = document.querySelector('.navbar__mobile-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('is-active');
+                mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+            });
+
+            // Close menu on link click
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('is-active');
+                    mobileMenu.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // =====================================================================
+        // Smooth Scroll for Anchor Links (with Lenis)
+        // =====================================================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    if (lenis) {
+                        lenis.scrollTo(target, { offset: 0 });
+                    } else {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // =====================================================================
+        // Scroll Animations (Intersection Observer)
+        // =====================================================================
+        if (!prefersReducedMotion) {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(el => scrollObserver.observe(el));
+        }
+
+        // =====================================================================
+        // TEXT SCRAMBLE EFFECT - Heading Animation (Premium, Calm, Engineering Feel)
+        // =====================================================================
+        class TextScrambleEffect {
+            constructor(element) {
+                this.element = element;
+                // Ultra-minimal character set: A-Z, 0-9, # only
+                this.chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#';
+                this.originalText = element.textContent;
+                this.isAnimating = false;
+                this.hasExitedViewport = true; // Start true to allow first trigger
+                this.lastAnimationTime = 0;
+                this.cooldown = 800; // Longer cooldown to prevent spam
+
+                // Pre-calculate organic variance offsets for each character
+                this.charOffsets = [];
+            }
+
+            reset() {
+                this.hasExitedViewport = true;
+            }
+
+            // Ease-out curve for natural deceleration
+            easeOutQuad(t) {
+                return 1 - (1 - t) * (1 - t);
+            }
+
+            // Generate organic variance for resolve timing
+            generateCharOffsets(length) {
+                this.charOffsets = [];
+                for (let i = 0; i < length; i++) {
+                    // Smaller variance for smoother feel (-0.04 to +0.04)
+                    this.charOffsets[i] = (Math.random() - 0.5) * 0.08;
+                }
+            }
+
+            animate() {
+                const now = Date.now();
+                if (this.isAnimating || !shouldAnimate) {
+                    if (!shouldAnimate) this.element.textContent = this.originalText;
+                    return Promise.resolve();
+                }
+                if (now - this.lastAnimationTime < this.cooldown) return Promise.resolve();
+                if (!this.hasExitedViewport) return Promise.resolve();
+
+                this.isAnimating = true;
+                this.hasExitedViewport = false;
+                this.lastAnimationTime = now;
+
+                const text = this.originalText;
+                const length = text.length;
+
+                // Calmer timing: 1400ms total (was 2100ms - faster overall, less time to annoy)
+                const duration = 1400;
+                // Lower frame rate = calmer, less jittery (20fps instead of 30fps)
+                const frameRate = 20;
+                const frameInterval = 1000 / frameRate;
+                const totalFrames = duration / frameInterval;
+
+                // Generate organic variance for this animation cycle
+                this.generateCharOffsets(length);
+
+                // Track which characters have been "locked" (resolved permanently)
+                const lockedChars = new Array(length).fill(false);
+
+                // Track scramble state for each character
+                // Each char changes at most 1-2 times before resolving
+                const scrambleCounters = new Array(length).fill(0);
+                const maxScrambles = 2; // CRITICAL: 1-2 changes max per character
+
+                let frame = 0;
+
+                return new Promise((resolve) => {
+                    const update = () => {
+                        let output = '';
+                        const linearProgress = frame / totalFrames;
+                        // Apply ease-out: starts faster, slows toward end (feels natural)
+                        const progress = this.easeOutQuad(linearProgress);
+
+                        // Calculate base reveal progress with slight overshoot for clean finish
+                        const baseRevealProgress = progress * 1.1;
+
+                        for (let i = 0; i < length; i++) {
+                            if (text[i] === ' ') {
+                                output += ' ';
+                                continue;
+                            }
+
+                            // Calculate this character's reveal threshold with organic variance
+                            const charThreshold = (i / length) + this.charOffsets[i];
+                            const isRevealed = baseRevealProgress >= charThreshold;
+
+                            if (isRevealed || lockedChars[i]) {
+                                // Character is revealed - lock it permanently
+                                lockedChars[i] = true;
+                                output += text[i];
+                            } else {
+                                // Character is not yet revealed
+                                // Much lower scramble chance = calmer, less busy (15%)
+                                const shouldScramble = Math.random() < 0.15;
+
+                                if (shouldScramble && scrambleCounters[i] < maxScrambles) {
+                                    // Scramble this character (1-2 times max)
+                                    output += this.chars[Math.floor(Math.random() * this.chars.length)];
+                                    scrambleCounters[i]++;
+                                } else {
+                                    // Show original character (creates stability)
+                                    output += text[i];
+                                }
+                            }
+                        }
+
+                        this.element.textContent = output;
+                        frame++;
+
+                        if (frame <= totalFrames) {
+                            requestAnimationFrame(update);
+                        } else {
+                            // Ensure final state is the original text
+                            this.element.textContent = this.originalText;
+                            this.isAnimating = false;
+                            resolve();
+                        }
+                    };
+
+                    update();
+                });
+            }
+        }
+
+        // =====================================================================
+        // CHARACTER TYPEWRITER - Code Animation
+        // =====================================================================
+        class CharacterTypewriter {
+            constructor(container, options = {}) {
+                this.container = container;
+                this.options = {
+                    baseSpeed: 8,           // FASTER: 8ms per character (was 25)
+                    speedVariation: 5,      // FASTER: 5ms variation (was 15)
+                    pauseAfterBrace: 40,    // FASTER: 40ms (was 150)
+                    pauseAfterSemicolon: 30, // FASTER: 30ms (was 100)
+                    pauseAfterNewline: 25,   // FASTER: 25ms (was 80)
+                    pauseAfterComma: 20,     // FASTER: 20ms (was 60)
+                    ...options
+                };
+                this.hasPlayed = false;
+                this.lines = [];
+                this.currentLineIndex = 0;
+                this.currentCharIndex = 0;
+                this.isTyping = false;
+            }
+
+            prepare() {
+                // Get all code lines
+                const lineElements = this.container.querySelectorAll('.preview__code-line, .developer__code-line');
+
+                lineElements.forEach((line, index) => {
+                    const contentEl = line.querySelector('.preview__code-line--content, .code-content');
+                    if (!contentEl) return;
+
+                    // Store original HTML for syntax highlighting
+                    const originalHTML = contentEl.innerHTML;
+
+                    // Create a wrapper for progressive typing
+                    const wrapper = document.createElement('span');
+                    wrapper.className = 'typewriter-text';
+                    wrapper.innerHTML = '';
+
+                    // Store the original HTML as data
+                    contentEl.dataset.originalHtml = originalHTML;
+                    contentEl.innerHTML = '';
+                    contentEl.appendChild(wrapper);
+
+                    // Add cursor element
+                    const cursor = document.createElement('span');
+                    cursor.className = 'typewriter-cursor';
+                    contentEl.appendChild(cursor);
+
+                    this.lines.push({
+                        element: line,
+                        contentEl: contentEl,
+                        wrapper: wrapper,
+                        cursor: cursor,
+                        originalHTML: originalHTML,
+                        plainText: this.htmlToPlainText(originalHTML),
+                        syntaxSegments: this.parseHTMLToSegments(originalHTML)
+                    });
+
+                    // Initially hide lines
+                    line.style.opacity = '0';
+                    line.style.transform = 'translateX(-4px)';
+                });
+            }
+
+            htmlToPlainText(html) {
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+                return temp.textContent || '';
+            }
+
+            parseHTMLToSegments(html) {
+                const segments = [];
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+
+                const walk = (node) => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        for (let char of node.textContent) {
+                            segments.push({ char, className: null });
+                        }
+                    } else if (node.nodeType === Node.ELEMENT_NODE) {
+                        const className = node.className;
+                        for (let child of node.childNodes) {
+                            if (child.nodeType === Node.TEXT_NODE) {
+                                for (let char of child.textContent) {
+                                    segments.push({ char, className });
+                                }
+                            } else {
+                                walk(child);
+                            }
+                        }
+                    }
+                };
+
+                for (let child of temp.childNodes) {
+                    walk(child);
+                }
+
+                return segments;
+            }
+
+            getDelay(char, nextChar) {
+                let delay = this.options.baseSpeed + (Math.random() * this.options.speedVariation);
+
+                if (char === '{' || char === '}' || char === '[' || char === ']' || char === '(') {
+                    delay += this.options.pauseAfterBrace;
+                } else if (char === ';') {
+                    delay += this.options.pauseAfterSemicolon;
+                } else if (char === ',') {
+                    delay += this.options.pauseAfterComma;
+                } else if (char === '\n') {
+                    delay += this.options.pauseAfterNewline;
+                }
+
+                return delay;
+            }
+
+            async typeCharacter() {
+                if (!this.isTyping) return;
+
+                const line = this.lines[this.currentLineIndex];
+                if (!line) {
+                    this.finish();
+                    return;
+                }
+
+                // Show the line when we start typing on it
+                if (this.currentCharIndex === 0) {
+                    line.element.style.opacity = '1';
+                    line.element.style.transform = 'translateX(0)';
+                    line.element.style.transition = 'opacity 0.15s ease, transform 0.15s ease';
+
+                    // Move cursor to this line
+                    this.lines.forEach((l, i) => {
+                        if (l.cursor) {
+                            l.cursor.style.display = i === this.currentLineIndex ? 'inline-block' : 'none';
+                        }
+                    });
+                }
+
+                const segment = line.syntaxSegments[this.currentCharIndex];
+
+                if (segment) {
+                    // Create character element with syntax highlighting
+                    if (segment.className) {
+                        const span = document.createElement('span');
+                        span.className = segment.className;
+                        span.textContent = segment.char;
+                        line.wrapper.appendChild(span);
+                    } else {
+                        line.wrapper.appendChild(document.createTextNode(segment.char));
+                    }
+
+                    this.currentCharIndex++;
+
+                    // Get delay for next character
+                    const nextSegment = line.syntaxSegments[this.currentCharIndex];
+                    const delay = this.getDelay(segment.char, nextSegment ? nextSegment.char : null);
+
+                    setTimeout(() => this.typeCharacter(), delay);
+                } else {
+                    // Move to next line
+                    this.currentLineIndex++;
+                    this.currentCharIndex = 0;
+
+                    // Slight pause between lines
+                    setTimeout(() => this.typeCharacter(), this.options.pauseAfterNewline);
+                }
+            }
+
+            finish() {
+                this.isTyping = false;
+                // Hide all cursors
+                this.lines.forEach(line => {
+                    if (line.cursor) {
+                        line.cursor.style.display = 'none';
+                    }
+                });
+
+                // Show AI comment if exists
+                const aiComment = this.container.querySelector('.preview__ai-comment');
+                if (aiComment) {
+                    setTimeout(() => {
+                        aiComment.classList.add('typewriter-visible');
+                    }, 200);
+                }
+            }
+
+            start() {
+                if (this.hasPlayed || !shouldAnimate) {
+                    // Show everything immediately
+                    this.lines.forEach(line => {
+                        line.element.style.opacity = '1';
+                        line.element.style.transform = 'translateX(0)';
+                        line.wrapper.innerHTML = line.originalHTML;
+                        if (line.cursor) line.cursor.style.display = 'none';
+                    });
+                    const aiComment = this.container.querySelector('.preview__ai-comment');
+                    if (aiComment) aiComment.classList.add('typewriter-visible');
+                    return;
+                }
+
+                this.hasPlayed = true;
+                this.isTyping = true;
+                this.prepare();
+
+                // Start typing after a brief delay
+                setTimeout(() => this.typeCharacter(), 300);
+            }
+        }
+
+        // =====================================================================
+        // DEVELOPER SECTION - Simpler Code Block Typewriter
+        // =====================================================================
+        class SimpleCodeTypewriter {
+            constructor(container) {
+                this.container = container;
+                this.hasPlayed = false;
+                this.originalContent = container.innerHTML;
+            }
+
+            start() {
+                if (this.hasPlayed || !shouldAnimate) {
+                    this.container.style.opacity = '1';
+                    return;
+                }
+
+                this.hasPlayed = true;
+
+                // Get text content and preserve structure
+                const lines = this.container.querySelectorAll('div');
+                let delay = 0;
+
+                lines.forEach((line, index) => {
+                    const originalHTML = line.innerHTML;
+                    line.innerHTML = '';
+                    line.style.visibility = 'visible';
+
+                    // Parse and type character by character
+                    const segments = this.parseToSegments(originalHTML);
+                    let charIndex = 0;
+
+                    const typeChar = () => {
+                        if (charIndex < segments.length) {
+                            const seg = segments[charIndex];
+                            if (seg.className) {
+                                const span = document.createElement('span');
+                                span.className = seg.className;
+                                span.textContent = seg.char;
+                                line.appendChild(span);
+                            } else {
+                                line.appendChild(document.createTextNode(seg.char));
+                            }
+                            charIndex++;
+
+                            // Variable delay
+                            let charDelay = 20 + Math.random() * 15;
+                            if (seg.char === ':' || seg.char === '-') charDelay += 40;
+
+                            setTimeout(typeChar, charDelay);
+                        }
+                    };
+
+                    setTimeout(typeChar, delay);
+                    delay += 150 + (lines.length > 5 ? 100 : 200);
+                });
+            }
+
+            parseToSegments(html) {
+                const segments = [];
+                const temp = document.createElement('div');
+                temp.innerHTML = html;
+
+                const walk = (node) => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        for (let char of node.textContent) {
+                            segments.push({ char, className: null });
+                        }
+                    } else if (node.nodeType === Node.ELEMENT_NODE) {
+                        const className = node.className;
+                        for (let child of node.childNodes) {
+                            if (child.nodeType === Node.TEXT_NODE) {
+                                for (let char of child.textContent) {
+                                    segments.push({ char, className });
+                                }
+                            } else {
+                                walk(child);
+                            }
+                        }
+                    }
+                };
+
+                for (let child of temp.childNodes) {
+                    walk(child);
+                }
+
+                return segments;
+            }
+        }
+
+        // =====================================================================
+        // Initialize Animations
+        // =====================================================================
+
+        // Text Scramble for SECTION headings ONLY (h2, h3)
+        // EXCLUDED: Hero (h1), nav, footer, CTA section - these stay static
+        const scrambleHeadings = document.querySelectorAll(
+            '.section h2, .section h3, ' +
+            '.security h2, .preview h2, ' +
+            '.developer h2, .steps h2'
+        );
+        const headingEffects = new Map();
+
+        scrambleHeadings.forEach(heading => {
+            // Additional safety: skip if heading is inside excluded containers
+            if (heading.closest('.hero, .cta, .footer, .navbar, .mobile-menu')) {
+                return;
+            }
+            const effect = new TextScrambleEffect(heading);
+            headingEffects.set(heading, effect);
+        });
+
+        // Character Typewriter for code preview
+        const previewSection = document.querySelector('.preview');
+        const previewCode = document.querySelector('.preview__code');
+        let codeTypewriter = null;
+
+        if (previewCode) {
+            codeTypewriter = new CharacterTypewriter(previewCode);
+        }
+
+        // Developer section code block
+        const developerCodeBlock = document.querySelector('.developer__code-block');
+        let devTypewriter = null;
+
+        if (developerCodeBlock) {
+            devTypewriter = new SimpleCodeTypewriter(developerCodeBlock);
+        }
+
+        // =====================================================================
+        // Unified Heading Observer (with scroll replay)
+        // =====================================================================
+        if (shouldAnimate) {
+            // Use two observers: one for entry trigger, one for full exit reset
+            // This prevents retriggering on micro-scrolls
+            const headingEntryObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const effect = headingEffects.get(entry.target);
+                    if (!effect) return;
+
+                    if (entry.isIntersecting) {
+                        // Trigger animation when 40-50% visible
+                        effect.animate();
+                    }
+                });
+            }, {
+                // Trigger at ~45% visibility (between 40-50% as specified)
+                threshold: 0.45,
+                // Trigger slightly before reaching center of viewport
+                rootMargin: '0px 0px -5% 0px'
+            });
+
+            // Separate observer for exit detection - requires FULL exit
+            const headingExitObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const effect = headingEffects.get(entry.target);
+                    if (!effect) return;
+
+                    if (!entry.isIntersecting) {
+                        // Only reset when FULLY exited viewport
+                        effect.reset();
+                    }
+                });
+            }, {
+                // Threshold 0 = must be completely out of view to reset
+                threshold: 0,
+                rootMargin: '0px'
+            });
+
+            scrambleHeadings.forEach(heading => {
+                headingEntryObserver.observe(heading);
+                headingExitObserver.observe(heading);
+            });
+        }
+
+        // =====================================================================
+        // Preview Section Observer (for code typewriter)
+        // =====================================================================
+        if (previewSection && codeTypewriter) {
+            const previewObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start code typewriter after a brief delay
+                        setTimeout(() => {
+                            codeTypewriter.start();
+                        }, 300);
+
+                        previewObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            previewObserver.observe(previewSection);
+        }
+
+        // Developer section observer
+        const developerSection = document.querySelector('.developer');
+        if (developerSection && devTypewriter) {
+            const developerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start code block typing
+                        setTimeout(() => {
+                            devTypewriter.start();
+                        }, 300);
+
+                        developerObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            developerObserver.observe(developerSection);
+        }
+
+        // =====================================================================
+        // Fallback for Reduced Motion / Low-end Devices
+        // =====================================================================
+        if (!shouldAnimate) {
+            // Show all content immediately
+            document.querySelectorAll('.preview__code-line').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+
+            const aiComment = document.querySelector('.preview__ai-comment');
+            if (aiComment) {
+                aiComment.style.opacity = '1';
+                aiComment.style.transform = 'none';
+            }
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                el.classList.add('is-visible');
+            });
+
+            // Show headings without animation
+            scrambleHeadings.forEach(heading => {
+                const effect = headingEffects.get(heading);
+                if (effect) heading.textContent = effect.originalText;
+            });
+        }
+    </script>
+
+</body>
+
+</html>

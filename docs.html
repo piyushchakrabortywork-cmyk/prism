@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PRISM Documentation - Integration, Configuration, and API Reference.">
+    <title>Documentation — PRISM</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="docs-body">
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
+
+    <!-- ========================================================================
+       NAVBAR (Re-used)
+       ======================================================================== -->
+    <nav class="navbar">
+        <div class="navbar__container">
+
+            <!-- Left: Logo -->
+            <a href="index.html" class="navbar__logo">PRISM</a>
+
+            <!-- Center: Navigation Links -->
+            <ul class="navbar__nav">
+                <li>
+                    <a href="index.html#features" class="navbar__link">
+                        Features
+                        <span class="navbar__link-arrow">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="how-it-works.html" class="navbar__link">
+                        How it Works
+                        <span class="navbar__link-arrow">↓</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="docs.html" class="navbar__link"
+                        style="color: var(--primary-dark); font-weight: 500;">Docs</a>
+                </li>
+                <li>
+                    <a href="pricing.html" class="navbar__link">Pricing</a>
+                </li>
+            </ul>
+
+            <!-- Right: Actions -->
+            <div class="navbar__actions">
+                <a href="https://github.com" class="navbar__github" target="_blank" rel="noopener">
+                    <svg class="navbar__github-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>2.4k</span>
+                </a>
+
+                <a href="index.html#install" class="navbar__cta">Install PRISM</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar__mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-menu__nav">
+            <a href="index.html#features" class="mobile-menu__link">
+                Features
+                <span class="mobile-menu__link-arrow">↗</span>
+            </a>
+            <a href="how-it-works.html" class="mobile-menu__link">
+                How it Works
+                <span class="mobile-menu__link-arrow">↓</span>
+            </a>
+            <a href="docs.html" class="mobile-menu__link">Docs</a>
+            <a href="pricing.html" class="mobile-menu__link">Pricing</a>
+        </nav>
+        <a href="index.html#install" class="mobile-menu__cta">Install PRISM</a>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="docs-mobile-overlay"></div>
+
+    <!-- ========================================================================
+       DOCS LAYOUT
+       ======================================================================== -->
+    <div class="docs-layout">
+
+        <!-- Mobile TOC Toggle -->
+        <button class="docs-mobile-toc-toggle" aria-label="Toggle Table of Contents">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+            On This Page
+        </button>
+
+        <!-- Sticky Sidebar (MOVED LEFT) -->
+        <aside class="docs-sidebar">
+            <div class="docs-sidebar-header">
+                <span class="docs-toc-title">Contents</span>
+                <button class="docs-sidebar-close" aria-label="Close Menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="docs-toc">
+                <ul class="docs-toc-list">
+                    <li><a href="#introduction" class="active">Introduction</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#configuration">Configuration</a></li>
+                    <li><a href="#api-reference">API Reference</a></li>
+                    <li><a href="#examples">Examples</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-content">
+            <div class="container container--docs">
+
+                <!-- Intro Section -->
+                <section id="introduction" class="docs-section">
+                    <h1>Documentation</h1>
+                    <p class="docs-lead">Everything you need to integrate PRISM into your workflow.</p>
+
+                    <p>PRISM is a developer-first tool designed to bring intelligent code review capabilities directly
+                        into your pull requests. It catches bugs, security vulnerabilities, and architectural issues
+                        before they merge.</p>
+                </section>
+
+                <!-- Getting Started -->
+                <section id="getting-started" class="docs-section">
+                    <h2>Getting Started</h2>
+                    <p>To get started with PRISM, you'll need a GitHub account and a repository where you have admin
+                        permissions.</p>
+
+                    <h3 id="installation">Installation</h3>
+                    <p>You can install the PRISM GitHub App directly from the marketplace.</p>
+
+                    <div class="docs-code-block">
+                        <div class="docs-code-header">
+                            <span class="docs-code-lang">bash</span>
+                            <button class="copy-btn" aria-label="Copy to clipboard">
+                                <span class="tooltip">Copied!</span>
+                                <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" style="display: none;">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <pre><code>npx prism-cli init</code></pre>
+                    </div>
+                </section>
+
+                <!-- Configuration -->
+                <section id="configuration" class="docs-section">
+                    <h2>Configuration</h2>
+                    <p>Create a <code>.prism.yml</code> file in the root of your repository to configure the analysis
+                        rules.</p>
+
+                    <div class="docs-code-block">
+                        <div class="docs-code-header">
+                            <span class="docs-code-lang">yaml</span>
+                            <button class="copy-btn" aria-label="Copy to clipboard">
+                                <span class="tooltip">Copied!</span>
+                                <svg class="copy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" style="display: none;">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <pre><code>rules:
+  security: strict
+  performance: warning
+  complexity_threshold: 12
+ 
+ignore:
+  - "dist/**"
+  - "**/*.test.ts"</code></pre>
+                    </div>
+                </section>
+
+                <!-- API Reference -->
+                <section id="api-reference" class="docs-section">
+                    <h2>API Reference</h2>
+                    <p>Run PRISM locally to catch issues before you push.</p>
+
+                    <div class="docs-cli-window">
+                        <div class="docs-cli-header">
+                            <span class="cli-dot red"></span>
+                            <span class="cli-dot yellow"></span>
+                            <span class="cli-dot green"></span>
+                            <span class="cli-title">terminal</span>
+                        </div>
+                        <div class="docs-cli-body">
+                            <div class="cli-line">
+                                <span class="cli-prompt">$</span>
+                                <span class="typing-text" data-text="npx prism-cli check --verbose"></span><span
+                                    class="cursor"></span>
+                            </div>
+                            <!-- Results will be appended here by JS -->
+                            <div class="cli-output" style="display:none; margin-top: 8px;">
+                                <div style="color: #64748b;">> Analyzing 42 files...</div>
+                                <div style="color: #22c55e; margin-top: 4px;">✔ No security issues found</div>
+                                <div style="color: #eab308;">⚠ 2 performance warnings detected</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="docs-nav-buttons">
+                    <a href="#configuration" class="docs-nav-btn prev">
+                        <span class="label">Previous</span>
+                        <span class="title">Configuration</span>
+                    </a>
+                    <a href="#examples" class="docs-nav-btn next">
+                        <span class="label">Next</span>
+                        <span class="title">Examples</span>
+                    </a>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+
+    <!-- ========================================================================
+       FOOTER (Re-used)
+       ======================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">PRISM</div>
+                    <p class="footer__tagline">Clarity before every merge.</p>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Product</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#features" class="footer__link">Features</a></li>
+                        <li><a href="pricing.html" class="footer__link">Pricing</a></li>
+                        <li><a href="#" class="footer__link">Changelog</a></li>
+                        <li><a href="#" class="footer__link">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Docs</h4>
+                    <ul class="footer__links">
+                        <li><a href="docs.html" class="footer__link">Getting Started</a></li>
+                        <li><a href="docs.html#configuration" class="footer__link">Configuration</a></li>
+                        <li><a href="docs.html#api-reference" class="footer__link">API Reference</a></li>
+                        <li><a href="#" class="footer__link">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#about" class="footer__link">About</a></li>
+                        <li><a href="#" class="footer__link">Blog</a></li>
+                        <li><a href="#" class="footer__link">Careers</a></li>
+                        <li><a href="#" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4>Legal</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" class="footer__link">Privacy</a></li>
+                        <li><a href="#" class="footer__link">Terms</a></li>
+                        <li><a href="#" class="footer__link">Security</a></li>
+                        <li><a href="#" class="footer__link">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <span>&copy; 2026 PRISM. All rights reserved.</span>
+                <div class="footer__legal">
+                    <a href="#" class="footer__link">Privacy Policy</a>
+                    <a href="#" class="footer__link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="docs.js"></script> <!-- New specific JS for docs -->
+    <script>
+        // Init smooth scroll same as index
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            orientation: 'vertical',
+            smoothWheel: true,
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Initial mobile toggle reuse check
+        const mobileToggle = document.querySelector('.navbar__mobile-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('is-active');
+                mobileMenu.classList.toggle('is-open');
+                document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+            });
+        }
+    </script>
+</body>
+
+</html>
