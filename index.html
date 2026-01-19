@@ -52,7 +52,8 @@
 
             <!-- Right: Actions -->
             <div class="navbar__actions">
-                <a href="https://github.com" class="navbar__github" target="_blank" rel="noopener">
+                <a href="https://github.com/piyushchakrabortywork-cmyk" class="navbar__github" target="_blank"
+                    rel="noopener" aria-label="View on GitHub">
                     <svg class="navbar__github-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -99,9 +100,7 @@
             <!-- Status Badge -->
             <div class="hero__badge">
                 <span class="hero__badge-dot"></span>
-                <span class="hero__badge-text">github app</span>
-                <span class="hero__badge-separator">/</span>
-                <span class="hero__badge-text">live</span>
+                <span class="hero__badge-text">V1 is now available</span>
             </div>
 
             <!-- Main Headline (2 lines) -->
@@ -139,10 +138,38 @@
     <section class="trust">
         <div class="container">
             <ul class="trust__list">
-                <li class="trust__item">Works with GitHub</li>
-                <li class="trust__item">Built for teams</li>
-                <li class="trust__item">Secure by default</li>
-                <li class="trust__item">Privacy-first</li>
+                <li class="trust__item">
+                    <svg class="trust__icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>Works with GitHub</span>
+                </li>
+                <li class="trust__item">
+                    <svg class="trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                    <span>Built for teams</span>
+                </li>
+                <li class="trust__item">
+                    <svg class="trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <span>Secure by default</span>
+                </li>
+                <li class="trust__item">
+                    <svg class="trust__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    <span>Privacy-first</span>
+                </li>
             </ul>
         </div>
     </section>
@@ -209,7 +236,7 @@
             <div class="preview__layout">
                 <!-- Side content - visible immediately -->
                 <aside class="preview__features">
-                    <h3 class="preview__features-title">What PRISM catches</h3>
+                    <h3 class="preview__features-title">Issues PRISM detects before production</h3>
                     <ul class="preview__features-list">
                         <li class="preview__features-item">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -370,18 +397,18 @@
     <section class="section developer">
         <div class="container developer__inner">
             <div class="developer__content animate-on-scroll">
-                <h2>Built for serious engineering teams.</h2>
+                <h2>Engineered for scale. Built for precision.</h2>
                 <ul class="developer__list">
-                    <li class="developer__item">Supports monorepos and complex project structures</li>
-                    <li class="developer__item">Understands architectural patterns and design systems</li>
-                    <li class="developer__item">Custom rules per repository or organization</li>
-                    <li class="developer__item">Works seamlessly with existing CI/CD pipelines</li>
-                    <li class="developer__item">Integrates with Slack, Discord, and your workflow</li>
+                    <li class="developer__item">Monorepo-native analysis engine</li>
+                    <li class="developer__item">Deep context awareness across file boundaries</li>
+                    <li class="developer__item">Granular rule configuration via YAML</li>
+                    <li class="developer__item">Zero-latency CI/CD pipeline integration</li>
+                    <li class="developer__item">Seamless workflow integration (Slack, Linear)</li>
                 </ul>
             </div>
 
             <div class="developer__visual animate-on-scroll" data-delay="2">
-                <div class="developer__code-block">
+                <div class="developer__code-block" id="developer-code-box">
                     <div style="color: rgba(255,255,255,0.5); margin-bottom: 12px;"># .prism.yml</div>
                     <div><span class="syntax-variable">rules</span>:</div>
                     <div style="padding-left: 16px;"><span class="syntax-variable">security</span>: <span
@@ -454,6 +481,7 @@
     <section class="cta">
         <div class="container">
             <h2>Ship with confidence.</h2>
+            <p class="cta__subtext">Merge with clarity. Deploy with peace of mind.</p>
             <div class="cta__actions">
                 <a href="#install" class="btn btn--light">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -694,9 +722,9 @@
                 const text = this.originalText;
                 const length = text.length;
 
-                // Calmer timing: 1400ms total (was 2100ms - faster overall, less time to annoy)
-                const duration = 1400;
-                // Lower frame rate = calmer, less jittery (20fps instead of 30fps)
+                // Calmer timing: 1800ms total (slower for premium feel)
+                const duration = 1800;
+                // Lower frame rate = calmer (20fps)
                 const frameRate = 20;
                 const frameInterval = 1000 / frameRate;
                 const totalFrames = duration / frameInterval;
@@ -740,8 +768,8 @@
                                 output += text[i];
                             } else {
                                 // Character is not yet revealed
-                                // Much lower scramble chance = calmer, less busy (15%)
-                                const shouldScramble = Math.random() < 0.15;
+                                // Lower scramble chance = calmer (10%)
+                                const shouldScramble = Math.random() < 0.10;
 
                                 if (shouldScramble && scrambleCounters[i] < maxScrambles) {
                                     // Scramble this character (1-2 times max)
@@ -770,6 +798,37 @@
                     update();
                 });
             }
+        }
+
+        // =====================================================================
+        // 3D TILT EFFECT FOR CODE BOX
+        // =====================================================================
+        const codeBox = document.getElementById('developer-code-box');
+        if (codeBox && !prefersReducedMotion && !isLowEndDevice) {
+            const container = codeBox.closest('.developer__visual');
+
+            container.addEventListener('mousemove', (e) => {
+                const rect = codeBox.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Calculate position relative to center (0 to 1)
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                // Max rotation degrees
+                const maxRot = 10;
+
+                // Calculate rotation (inverted for natural feel)
+                const rotateX = ((y - centerY) / centerY) * -maxRot;
+                const rotateY = ((x - centerX) / centerX) * maxRot;
+
+                codeBox.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                codeBox.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
         }
 
         // =====================================================================
@@ -1194,6 +1253,56 @@
             }, { threshold: 0.3 });
 
             developerObserver.observe(developerSection);
+        }
+
+        // =====================================================================
+        // Steps Progress Animation
+        // =====================================================================
+        const stepsGrid = document.querySelector('.steps__grid');
+        const steps = document.querySelectorAll('.step');
+
+        if (stepsGrid && steps.length > 0 && !prefersReducedMotion) {
+            const stepsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Start Line Animation
+                        stepsGrid.classList.add('is-animating');
+
+                        // Sequence Steps
+                        // Step 1: Immediate
+                        setTimeout(() => steps[0].classList.add('is-active'), 100);
+
+                        // Step 2: 600ms (when line reaches middle)
+                        setTimeout(() => steps[1].classList.add('is-active'), 600);
+
+                        // Step 3: 1100ms (when line reaches end)
+                        setTimeout(() => steps[2].classList.add('is-active'), 1200);
+
+                        stepsObserver.disconnect();
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            stepsObserver.observe(stepsGrid);
+        }
+
+        // =====================================================================
+        // Parallax Effect (Subtle)
+        // =====================================================================
+        if (!prefersReducedMotion && !isLowEndDevice && window.innerWidth > 900) {
+            const heroBadge = document.querySelector('.hero__badge');
+            const heroSub = document.querySelector('.hero__subheadline');
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                if (scrolled > 1000) return; // Optimization
+
+                if (heroBadge) heroBadge.style.transform = `translateY(${scrolled * 0.1}px)`;
+                if (heroSub) heroSub.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }, { passive: true });
         }
 
         // =====================================================================
